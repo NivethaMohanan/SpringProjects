@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean
+		class="com.nivetha.spring.springcore.constructorinjection.Address"
+		name="address" p:hno="123" p:street="mira mesa" p:city="san diego" />
+	<!-- <Value and ref as an element> <bean class="com.nivetha.spring.springcore.constructorinjection.Employee" 
+		name="employee"> <constructor-arg> <value>123</value> </constructor-arg> 
+		<constructor-arg> <ref bean="address" /> </constructor-arg> -->
+	<!-- <Value and ref using c reference or c schema> <bean class="com.nivetha.spring.springcore.constructorinjection.Employee" 
+		name="employee" c:id="123" c:address-ref="address"> -->
+	<!-- <Value and ref as an attribute -->
+	<bean
+		class="com.nivetha.spring.springcore.constructorinjection.Employee"
+		name="employee">
+
+		<constructor-arg value="123" />
+		<constructor-arg ref="address" />
+	</bean>
+</beans>
